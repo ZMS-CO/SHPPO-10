@@ -15,6 +15,7 @@ public class MyFrame extends JFrame{
         this.pack();
 
         this.setLocationRelativeTo(null);
+        this.setBackground(Color.BLACK);
         this.setVisible(true);
 
 

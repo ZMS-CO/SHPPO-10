@@ -4,15 +4,19 @@ import javax.swing.JPanel;
 public class MyPanel extends JPanel{
 
     MyPanel(){
-        this.setBackground(Color.black);
+
         this.setPreferredSize(new Dimension(1200, 675));
     }
 
-    public void paint(Graphics g) {
+    public void paint(Graphics g)
+    {
         Graphics2D g2D = (Graphics2D) g;
-
-        g2D.setStroke(new BasicStroke(5));
+        g2D.setStroke(new BasicStroke(10));
         g2D.setPaint(Color.red);
-        g2D.drawOval(200,200,400,400);
+        g2D.drawOval(330,450,70,40);
+        g2D.setPaint(Color.white);
+        g2D.drawOval(300,400,40,40);
+        g2D.drawOval(400,400,40,40);
     }
+
 }
