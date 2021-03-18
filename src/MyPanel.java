@@ -14,13 +14,16 @@ public class MyPanel extends JPanel implements ActionListener
     int x = 300;
     int y = 300;
     int r = 100;
-    int xVelocity = 5;
-    int yVelocity = 5;
+    int xVelocity = 1;
+    int yVelocity = 0;
     int rVelocity = 0;
     int x1 = x;
     int x2 = x1 + (int)(Math.cos(alpha)*h);
     int y1 = y;
     int y2 = y1 + (int)(Math.sin(alpha)*h);
+    public int dH = 1;
+    public int x3 = x1 + (int)(Math.cos(alpha)*dH);
+    public int y3 = x1 + (int)(Math.sin(alpha)*dH);
 
 
 
@@ -39,7 +42,10 @@ public class MyPanel extends JPanel implements ActionListener
         g2D.setStroke(new BasicStroke(10));
         g2D.setPaint(Color.red);
         g2D.drawOval(x - r, y - r, r * 2, r * 2);
+        g2D.setPaint(Color.yellow);
         g2D.drawLine(x1, y1, x2 , y2);
+        g2D.setPaint(Color.green);
+        g2D.drawOval(x3 - r, y3 - r, r * 2, r * 2);
 
     }
 
@@ -57,6 +63,12 @@ public class MyPanel extends JPanel implements ActionListener
         x = x + xVelocity;
         y = y + yVelocity;
         r = r + rVelocity;
+        x3 = x1 + (int)(Math.cos(alpha)*dH);
+        y3 = x1 + (int)(Math.sin(alpha)*dH);
+        if(dH<h)
+        {
+            dH++;
+        }
         repaint();
     }
 
