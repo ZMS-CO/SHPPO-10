@@ -1,11 +1,13 @@
 import java.awt.*;
 import javax.swing.*;
 
-public class MyFrame extends JFrame{
+public class MyFrame extends JFrame
+{
 
     MyPanel panel;
 
-    MyFrame() {
+    MyFrame()
+    {
 
         panel = new MyPanel();
 

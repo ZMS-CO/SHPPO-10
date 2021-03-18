@@ -1,9 +1,11 @@
 import java.awt.*;
 import javax.swing.JPanel;
 
-public class MyPanel extends JPanel{
+public class MyPanel extends JPanel
+{
 
-    MyPanel(){
+    MyPanel()
+    {
 
         this.setPreferredSize(new Dimension(1200, 675));
     }
