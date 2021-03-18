@@ -7,6 +7,7 @@ public class Main
     {
         Scanner scan = new Scanner(System.in);
         // write your code here
+        int i = 0;
 
         System.out.println("Check this out! o.o");
 
@@ -16,8 +17,24 @@ public class Main
 
         while (frame.isEnabled())
         {
-            System.out.print("Towards border (1- :");
-            scan.nextInt();
+
+            System.out.print("Instruction #" + i + 1 + ":\tTowards border (0 - no, 1 - up, 2 - down, 3 - left, 4 - right): ");
+            i ++;
+            int toBorder = scan.nextInt();
+            if (toBorder < 0 || toBorder > 4)
+            {
+                throw new IllegalArgumentException("Incorrect input!");
+            }
+            switch (toBorder) {
+                case 1: {continue;}
+                case 2: {continue;}
+                case 3: {continue;}
+                case 4: {continue;}
+                case 0: {break;}
+            }
+            System.out.print("\tAngle: ");
+            int alpha = scan.nextInt();
+
         }
         
 
