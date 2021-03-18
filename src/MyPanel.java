@@ -9,6 +9,9 @@ public class MyPanel extends JPanel implements ActionListener
     int x = 300;
     int y = 300;
     int r = 100;
+    int xv = 1;
+    int yv = 1;
+    int rv = 1;
 
     MyPanel()
     {
@@ -29,8 +32,11 @@ public class MyPanel extends JPanel implements ActionListener
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
-        x = x + 1;
+    public void actionPerformed(ActionEvent e)
+    {
+        x = x + xv;
+        y = y + yv;
+        r = r + rv;
         repaint();
     }
 
