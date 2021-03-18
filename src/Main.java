@@ -5,7 +5,7 @@ public class Main
     {
         // write your code here
 
-        System.out.println("Check this out! o.o");
+        System.out.println("Check this out!");
         new MyFrame();
     }
 }

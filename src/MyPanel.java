@@ -6,7 +6,7 @@ public class MyPanel extends JPanel implements ActionListener
 {
 
     Timer timer;
-    double alphaGrad = 30;
+    double alphaGrad = 90;
     double alpha = Math.toRadians(alphaGrad);
     int h = 400;
     int PANEL_WIDTH = 1200;
@@ -14,8 +14,8 @@ public class MyPanel extends JPanel implements ActionListener
     int x = 300;
     int y = 300;
     int r = 100;
-    int xVelocity = 1;
-    int yVelocity = 0;
+    int xVelocity = 5;
+    int yVelocity = 5;
     int rVelocity = 0;
     int x1 = x;
     int x2 = x1 + (int)(Math.cos(alpha)*h);
