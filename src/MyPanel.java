@@ -23,8 +23,6 @@ public class MyPanel extends JPanel implements ActionListener
     int y2 = y1 + (int)(Math.sin(alpha)*h);
 
 
-    boolean check = false;
-
 
     MyPanel()
     {
