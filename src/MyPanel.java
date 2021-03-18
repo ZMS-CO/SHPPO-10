@@ -41,11 +41,11 @@ public class MyPanel extends JPanel implements ActionListener
         Graphics2D g2D = (Graphics2D) g;
         g2D.setStroke(new BasicStroke(10));
         g2D.setPaint(Color.red);
-        g2D.drawOval(x - r, y - r, r * 2, r * 2);
+        g2D.fillOval(x - r, y - r, r * 2, r * 2);
         g2D.setPaint(Color.yellow);
         g2D.drawLine(x1, y1, x2 , y2);
         g2D.setPaint(Color.green);
-        g2D.drawOval(x3 - r, y3 - r, r * 2, r * 2);
+        g2D.fillOval(x3 - r, y3 - r, r * 2, r * 2);
 
     }
 
