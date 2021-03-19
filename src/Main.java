@@ -18,7 +18,7 @@ public class Main
         while (frame.isEnabled())
         {
 
-            System.out.print("Instruction #" + i + 1 + ":\tTowards border (0 - no, 1 - up, 2 - down, 3 - left, 4 - right): ");
+            System.out.print("Instruction #" + (i + 1) + ":\tTowards border (0 - no, 1 - up, 2 - down, 3 - left, 4 - right): ");
             i ++;
             int toBorder = scan.nextInt();
             if (toBorder < 0 || toBorder > 4)
@@ -32,8 +32,19 @@ public class Main
                 case 4: {continue;}
                 case 0: {break;}
             }
+
             System.out.print("\tAngle: ");
-            int alpha = scan.nextInt();
+            int alphaGrad = scan.nextInt();
+            if (alphaGrad < 0 || alphaGrad > 360)
+            {
+                throw new IllegalArgumentException("Incorrect input!");
+            }
+
+            System.out.print("\tdH: ");
+            int dh = scan.nextInt();
+
+            System.out.print("\tdR: ");
+            int dr = scan.nextInt();
 
         }
         
