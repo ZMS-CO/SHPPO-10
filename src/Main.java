@@ -5,8 +5,9 @@ public class Main
 
     public static void main(String[] args)
     {
+        Instruction[] instr_arr = new Instruction[9];
+
         Scanner scan = new Scanner(System.in);
-        // write your code here
         int i = 0;
 
         System.out.println("Check this out! o.o");
@@ -18,20 +19,13 @@ public class Main
         while (frame.isEnabled())
         {
 
-            System.out.print("Instruction #" + (i + 1) + ":\tTowards border (0 - no, 1 - up, 2 - down, 3 - left, 4 - right): ");
-            i ++;
-            int toBorder = scan.nextInt();
-            if (toBorder < 0 || toBorder > 4)
-            {
-                throw new IllegalArgumentException("Incorrect input!");
-            }
-            switch (toBorder) {
-                case 1: {continue;}
-                case 2: {continue;}
-                case 3: {continue;}
-                case 4: {continue;}
-                case 0: {break;}
-            }
+            System.out.print("Instruction #" + (i + 1) + ":");//\tTowards border (0 - no, 1 - up, 2 - down, 3 - left, 4 - right): ");
+
+            //int toBorder = scan.nextInt();
+            //if (toBorder < 0 || toBorder > 4)
+            //{
+            //    throw new IllegalArgumentException("Incorrect input!");
+            //}
 
             System.out.print("\tAngle: ");
             int alphaGrad = scan.nextInt();
@@ -40,12 +34,18 @@ public class Main
                 throw new IllegalArgumentException("Incorrect input!");
             }
 
+
             System.out.print("\tdH: ");
             int dh = scan.nextInt();
 
             System.out.print("\tdR: ");
             int dr = scan.nextInt();
 
+            instr_arr[i] = new Instruction(alphaGrad, dh, dr);
+
+            instr_arr[i].printParameters();
+
+            i ++;
         }
         
     }

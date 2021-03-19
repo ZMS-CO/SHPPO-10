@@ -25,6 +25,7 @@ public class MyPanel extends JPanel implements ActionListener
     public int x3 = x1 + (int)(Math.cos(alpha)*dH);
     public int y3 = x1 + (int)(Math.sin(alpha)*dH);
 
+    int instruction = 0;
 
 
 
@@ -51,6 +52,11 @@ public class MyPanel extends JPanel implements ActionListener
 
     }
 
+    public void setInstruction(int instr)
+    {
+        this.instruction = instr;
+    }
+
     @Override
     public void actionPerformed(ActionEvent e)
     {
@@ -73,16 +79,4 @@ public class MyPanel extends JPanel implements ActionListener
         }
         repaint();
     }
-
-    public class MyKeyAdapter extends KeyAdapter
-    {
-        @Override
-        public void keyPressed(KeyEvent e)
-        {
-
-        }
-    }
-
-
-
 }

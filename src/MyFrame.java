@@ -7,7 +7,6 @@ public class MyFrame extends JFrame implements KeyListener
 {
 
     MyPanel panel;
-    int instruction = 0;
 
     MyFrame()
     {
@@ -39,29 +38,29 @@ public class MyFrame extends JFrame implements KeyListener
 
     @Override
     public void keyReleased(KeyEvent e) {
-        System.out.println(e.getKeyCode() + " -\t" + e.getKeyChar());
+        //System.out.println(e.getKeyCode() + " -\t" + e.getKeyChar());
         switch(e.getKeyCode())
         {
             case KeyEvent.VK_1:
-                instruction = 1;
+                panel.setInstruction(1);
             case KeyEvent.VK_2:
-                instruction = 2;
+                panel.setInstruction(2);
             case KeyEvent.VK_3:
-                instruction = 3;
+                panel.setInstruction(3);
             case KeyEvent.VK_4:
-                instruction = 4;
+                panel.setInstruction(4);
             case KeyEvent.VK_5:
-                instruction = 5;
+                panel.setInstruction(5);
             case KeyEvent.VK_6:
-                instruction = 6;
+                panel.setInstruction(6);
             case KeyEvent.VK_7:
-                instruction = 7;
+                panel.setInstruction(7);
             case KeyEvent.VK_8:
-                instruction = 8;
+                panel.setInstruction(8);
             case KeyEvent.VK_9:
-                instruction = 9;
+                panel.setInstruction(9);
             case KeyEvent.VK_SPACE:
-                instruction = 0;
+                panel.setInstruction(0);
         }
     }
 }
