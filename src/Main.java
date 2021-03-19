@@ -37,6 +37,10 @@ public class Main
 
             System.out.print("\tdH: ");
             int dh = scan.nextInt();
+            if (dh < 0)
+            {
+                throw new IllegalArgumentException("Incorrect input!");
+            }
 
             System.out.print("\tdR: ");
             int dr = scan.nextInt();

@@ -55,11 +55,13 @@ public class MyPanel extends JPanel implements ActionListener
     public void setInstruction(int instr)
     {
         this.instruction = instr;
+        System.out.println(instr);
     }
 
     @Override
     public void actionPerformed(ActionEvent e)
     {
+        /*
         if (x + r + 2 >= PANEL_WIDTH || xVelocity < 0 && x - r - 2 <= 0)
         {
             xVelocity = - xVelocity;
@@ -76,6 +78,24 @@ public class MyPanel extends JPanel implements ActionListener
         if(dH<h)
         {
             dH++;
+        }
+        */
+
+        if (instruction == 10)
+        {
+            y = y - 5;
+        }
+        if (instruction == 11)
+        {
+            y = y + 5;
+        }
+        if (instruction == 12)
+        {
+            x = x - 5;
+        }
+        if (instruction == 13)
+        {
+            x = x + 5;
         }
         repaint();
     }

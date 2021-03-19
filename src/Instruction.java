@@ -40,6 +40,21 @@ public class Instruction
         h = val;
     }
 
+    public int getAlpha()
+    {
+        return alpha;
+    }
+
+    public int getDr()
+    {
+        return dr;
+    }
+
+    public int getH()
+    {
+        return h;
+    }
+
     public void printParameters()
     {
         System.out.println("Alpha=" + alpha + " H=" + h + " dr=" + dr);
