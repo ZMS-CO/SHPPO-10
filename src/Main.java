@@ -48,10 +48,5 @@ public class Main
 
         }
         
-
-=======
-        System.out.println("Check this out!");
-        new MyFrame();
->>>>>>> master
     }
 }
