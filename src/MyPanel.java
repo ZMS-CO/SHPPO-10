@@ -27,6 +27,8 @@ public class MyPanel extends JPanel implements ActionListener
 
 
 
+
+
     MyPanel()
     {
         this.setBackground(Color.black);
@@ -70,6 +72,15 @@ public class MyPanel extends JPanel implements ActionListener
             dH++;
         }
         repaint();
+    }
+
+    public class MyKeyAdapter extends KeyAdapter
+    {
+        @Override
+        public void keyPressed(KeyEvent e)
+        {
+
+        }
     }
 
 
