@@ -6,7 +6,7 @@ public class MyPanel extends JPanel implements ActionListener
 {
 
     Timer timer;
-    double alphaGrad = 30;
+    double alphaGrad = 90;
     double alpha = Math.toRadians(alphaGrad);
     int h = 400;
     int PANEL_WIDTH = 1200;
@@ -21,6 +21,9 @@ public class MyPanel extends JPanel implements ActionListener
     int x2 = x1 + (int)(Math.cos(alpha)*h);
     int y1 = y;
     int y2 = y1 + (int)(Math.sin(alpha)*h);
+    public int dH = 1;
+    public int x3 = x1 + (int)(Math.cos(alpha)*dH);
+    public int y3 = x1 + (int)(Math.sin(alpha)*dH);
 
 
 
@@ -38,8 +41,11 @@ public class MyPanel extends JPanel implements ActionListener
         Graphics2D g2D = (Graphics2D) g;
         g2D.setStroke(new BasicStroke(10));
         g2D.setPaint(Color.red);
-        g2D.drawOval(x - r, y - r, r * 2, r * 2);
+        g2D.fillOval(x - r, y - r, r * 2, r * 2);
+        g2D.setPaint(Color.yellow);
         g2D.drawLine(x1, y1, x2 , y2);
+        g2D.setPaint(Color.green);
+        g2D.fillOval(x3 - r, y3 - r, r * 2, r * 2);
 
     }
 
@@ -57,6 +63,12 @@ public class MyPanel extends JPanel implements ActionListener
         x = x + xVelocity;
         y = y + yVelocity;
         r = r + rVelocity;
+        x3 = x1 + (int)(Math.cos(alpha)*dH);
+        y3 = x1 + (int)(Math.sin(alpha)*dH);
+        if(dH<h)
+        {
+            dH++;
+        }
         repaint();
     }
 

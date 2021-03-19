@@ -8,7 +8,7 @@ public class Main
         Scanner scan = new Scanner(System.in);
         // write your code here
         int i = 0;
-
+        
         System.out.println("Check this out! o.o");
 
         MyFrame frame = new MyFrame();
@@ -49,5 +49,9 @@ public class Main
         }
         
 
+=======
+        System.out.println("Check this out!");
+        new MyFrame();
+>>>>>>> master
     }
 }
