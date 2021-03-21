@@ -25,6 +25,8 @@ public class MyPanel extends JPanel implements ActionListener
     public int x3 = x1 + (int)(Math.cos(alpha)*dH);
     public int y3 = x1 + (int)(Math.sin(alpha)*dH);
     int k = 0;
+    int xDestination = 0;
+    int yDestination = 0;
 
     int instruction = 0;
     Instruction[] instr_arr = new Instruction[9];
@@ -53,10 +55,10 @@ public class MyPanel extends JPanel implements ActionListener
         g2D.setStroke(new BasicStroke(10));
         g2D.setPaint(Color.red);
         g2D.fillOval(x - r, y - r, r * 2, r * 2);
-        g2D.setPaint(Color.yellow);
-        g2D.drawLine(x1, y1, x2 , y2);
-        g2D.setPaint(Color.green);
-        g2D.fillOval(x3 - r, y3 - r, r * 2, r * 2);
+        //g2D.setPaint(Color.yellow);
+        //g2D.drawLine(x1, y1, x2 , y2);
+        //g2D.setPaint(Color.green);
+        //g2D.fillOval(x3 - r, y3 - r, r * 2, r * 2);
 
     }
 
@@ -102,21 +104,31 @@ public class MyPanel extends JPanel implements ActionListener
         }
         */
 
+        if (k > 0)
+        {
+            if (instruction <= k && instruction > 0)
+            {
+                x = x + (int)(Math.cos(Math.toRadians(instr_arr[instruction - 1].getAlpha())) * instr_arr[instruction - 1].getH());
+                y = y + (int)(Math.sin(Math.toRadians(instr_arr[instruction - 1].getAlpha())) * instr_arr[instruction - 1].getH());
+                r = r + instr_arr[instruction - 1].getDr();
+            }
+        }
+
         if (instruction == 10 && y - r > 4)
         {
-            y = y - 5;
+            y = y - yVelocity;
         }
         if (instruction == 11 && y + r < PANEL_HEIGHT - 4)
         {
-            y = y + 5;
+            y = y + yVelocity;
         }
         if (instruction == 12 && x - r > 4)
         {
-            x = x - 5;
+            x = x - xVelocity;
         }
         if (instruction == 13 && x + r < PANEL_WIDTH - 4)
         {
-            x = x + 5;
+            x = x + xVelocity;
         }
         repaint();
     }

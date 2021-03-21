@@ -29,10 +29,10 @@ public class Main
 
             System.out.print("\tAngle: ");
             int alphaGrad = scan.nextInt();
-            if (alphaGrad < 0 || alphaGrad > 360)
-            {
-                throw new IllegalArgumentException("Incorrect input!");
-            }
+            //if (alphaGrad < 0 || alphaGrad > 360)
+            //{
+            //    throw new IllegalArgumentException("Incorrect input!");
+            //}
 
 
             System.out.print("\tdH: ");
