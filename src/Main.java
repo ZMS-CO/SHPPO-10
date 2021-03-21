@@ -5,7 +5,7 @@ public class Main
 
     public static void main(String[] args)
     {
-        Instruction[] instr_arr = new Instruction[9];
+        //Instruction[] instr_arr = new Instruction[9];
 
         Scanner scan = new Scanner(System.in);
         int i = 0;
@@ -45,9 +45,19 @@ public class Main
             System.out.print("\tdR: ");
             int dr = scan.nextInt();
 
-            instr_arr[i] = new Instruction(alphaGrad, dh, dr);
+            //instr_arr[i] = new Instruction(alphaGrad, dh, dr);
 
-            instr_arr[i].printParameters();
+            //instr_arr[i].printParameters();
+
+            Instruction instr = new Instruction(alphaGrad, dh, dr);
+            frame.sendInstruction(instr);
+
+            frame.printInstructions();
+
+            if (i >= 8)
+            {
+                break;
+            }
 
             i ++;
         }

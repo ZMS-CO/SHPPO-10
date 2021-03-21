@@ -26,6 +26,16 @@ public class MyFrame extends JFrame implements KeyListener
 
     }
 
+    public void sendInstruction(Instruction instr)
+    {
+        panel.addInstruction(instr);
+    }
+
+    public void printInstructions()
+    {
+        panel.printInstructions();
+    }
+
     @Override
     public void keyTyped(KeyEvent e) {
 

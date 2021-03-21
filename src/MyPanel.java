@@ -24,9 +24,10 @@ public class MyPanel extends JPanel implements ActionListener
     public int dH = 1;
     public int x3 = x1 + (int)(Math.cos(alpha)*dH);
     public int y3 = x1 + (int)(Math.sin(alpha)*dH);
+    int k = 0;
 
     int instruction = 0;
-
+    Instruction[] instr_arr = new Instruction[9];
 
 
 
@@ -36,6 +37,13 @@ public class MyPanel extends JPanel implements ActionListener
         this.setPreferredSize(new Dimension(PANEL_WIDTH, PANEL_HEIGHT));
         timer = new Timer(50, this);
         timer.start();
+        /*
+        for (int i = 0; i < 9; i++)
+        {
+            instr_arr[i] = 0;
+        }
+
+         */
     }
 
     public void paint(Graphics g)
@@ -56,6 +64,19 @@ public class MyPanel extends JPanel implements ActionListener
     {
         this.instruction = instr;
         System.out.println(instr);
+    }
+
+    public void addInstruction(Instruction instr)
+    {
+        instr_arr[k++] = instr;
+    }
+
+    public void printInstructions()
+    {
+        for (int i = 0; i < k; i++)
+        {
+            instr_arr[i].printParameters();
+        }
     }
 
     @Override
