@@ -81,19 +81,19 @@ public class MyPanel extends JPanel implements ActionListener
         }
         */
 
-        if (instruction == 10)
+        if (instruction == 10 && y - r > 4)
         {
             y = y - 5;
         }
-        if (instruction == 11)
+        if (instruction == 11 && y + r < PANEL_HEIGHT - 4)
         {
             y = y + 5;
         }
-        if (instruction == 12)
+        if (instruction == 12 && x - r > 4)
         {
             x = x - 5;
         }
-        if (instruction == 13)
+        if (instruction == 13 && x + r < PANEL_WIDTH - 4)
         {
             x = x + 5;
         }
