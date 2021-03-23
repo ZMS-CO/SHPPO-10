@@ -32,7 +32,7 @@ public class Main
             //instr_arr[i] = new Instruction(alphaGrad, dh, dr);
 
             //instr_arr[i].printParameters();
-            Instruction instr = new Instruction()
+            Instruction instr = new Instruction();
             for (int i = 0; i < 10; i++)
             {
                 System.out.print("\tAngle: ");
