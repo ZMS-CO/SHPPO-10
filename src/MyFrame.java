@@ -63,7 +63,7 @@ public class MyFrame extends JFrame implements KeyListener
                 {panel.setInstruction(8); break;}
             case KeyEvent.VK_9:
                 {panel.setInstruction(9); break;}
-            case KeyEvent.VK_SPACE:
+            case KeyEvent.VK_0:
                 {panel.setInstruction(0); break;}
             case KeyEvent.VK_UP:
                 {panel.setInstruction(10); break;}
