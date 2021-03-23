@@ -61,10 +61,10 @@ public class MyPanel extends JPanel implements ActionListener
         g2D.setStroke(new BasicStroke(10));
         g2D.setPaint(Color.red);
         g2D.fillOval((int)(x - r), (int)(y - r), (int)(r * 2), (int)(r * 2));
-        g2D.setPaint(Color.yellow);
-        g2D.drawLine((int)(x1), (int)(y1), (int)(x2) , (int)(y2));
-        g2D.setPaint(Color.green);
-        g2D.fillOval((int)(x3 - r), (int)(y3 - r), (int)(r * 2), (int)(r * 2));
+        //g2D.setPaint(Color.yellow);
+        //g2D.drawLine((int)(x1), (int)(y1), (int)(x2) , (int)(y2));
+        //g2D.setPaint(Color.green);
+        //g2D.fillOval((int)(x3 - r), (int)(y3 - r), (int)(r * 2), (int)(r * 2));
 
     }
 
@@ -124,7 +124,6 @@ public class MyPanel extends JPanel implements ActionListener
         }
 
 
-        /*
         if (instruction == 10 && y - r > 4)
         {
             y = y - yVelocity;
@@ -142,7 +141,6 @@ public class MyPanel extends JPanel implements ActionListener
             x = x + xVelocity;
         }
 
-        }*/
         repaint();
     }
 }
