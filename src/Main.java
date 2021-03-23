@@ -35,6 +35,7 @@ public class Main
             Instruction instr = new Instruction();
             for (int i = 0; i < 10; i++)
             {
+                System.out.println("Итерация " + i+1 + " из 10");
                 System.out.print("\tAngle: ");
                 int alphaGrad = scan.nextInt();
 
