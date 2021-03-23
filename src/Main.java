@@ -28,7 +28,6 @@ public class Main
             //}
 
 
-
             //instr_arr[i] = new Instruction(alphaGrad, dh, dr);
 
             //instr_arr[i].printParameters();
