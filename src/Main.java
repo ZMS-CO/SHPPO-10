@@ -8,7 +8,7 @@ public class Main
         //Instruction[] instr_arr = new Instruction[9];
 
         Scanner scan = new Scanner(System.in);
-        int i = 0;
+        int j = 0;
 
         System.out.println("Check this out! o.o");
 
@@ -19,7 +19,7 @@ public class Main
         while (frame.isEnabled())
         {
 
-            System.out.print("Instruction #" + (i + 1) + ":");//\tTowards border (0 - no, 1 - up, 2 - down, 3 - left, 4 - right): ");
+            System.out.print("Instruction #" + (j + 1) + ":");//\tTowards border (0 - no, 1 - up, 2 - down, 3 - left, 4 - right): ");
 
             //int toBorder = scan.nextInt();
             //if (toBorder < 0 || toBorder > 4)
@@ -27,39 +27,54 @@ public class Main
             //    throw new IllegalArgumentException("Incorrect input!");
             //}
 
-            System.out.print("\tAngle: ");
-            int alphaGrad = scan.nextInt();
-            //if (alphaGrad < 0 || alphaGrad > 360)
-            //{
-            //    throw new IllegalArgumentException("Incorrect input!");
-            //}
 
-
-            System.out.print("\tdH: ");
-            int dh = scan.nextInt();
-            if (dh < 0)
-            {
-                throw new IllegalArgumentException("Incorrect input!");
-            }
-
-            System.out.print("\tdR: ");
-            int dr = scan.nextInt();
 
             //instr_arr[i] = new Instruction(alphaGrad, dh, dr);
 
             //instr_arr[i].printParameters();
+            Instruction instr = new Instruction()
+            for (int i = 0; i < 10; i++)
+            {
+                System.out.print("\tAngle: ");
+                int alphaGrad = scan.nextInt();
 
-            Instruction instr = new Instruction(alphaGrad, dh, dr);
+                System.out.print("\tH: ");
+                int h = scan.nextInt();
+                if (h < 0)
+                {
+                    throw new IllegalArgumentException("Incorrect input!");
+                }
+
+                System.out.print("\tdH: ");
+                int dh = scan.nextInt();
+                if (dh < 0)
+                {
+                    throw new IllegalArgumentException("Incorrect input!");
+                }
+
+                System.out.print("\tR: ");
+                int r = scan.nextInt();
+
+                System.out.print("\tdR: ");
+                int dr = scan.nextInt();
+                if (dr < 0)
+                {
+                    throw new IllegalArgumentException("Incorrect input!");
+                }
+
+                instr.newPart(i, alphaGrad, h, dh, r, dr);
+            }
+
             frame.sendInstruction(instr);
 
             frame.printInstructions();
 
-            if (i >= 8)
+            if (j >= 8)
             {
                 break;
             }
 
-            i ++;
+            j ++;
         }
         
     }
