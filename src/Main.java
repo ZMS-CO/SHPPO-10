@@ -28,7 +28,7 @@ public class Main
             //}
 
             System.out.print("\tAngle: ");
-            int alphaGrad = scan.nextInt();
+            int alphaGrad = -scan.nextInt();
             //if (alphaGrad < 0 || alphaGrad > 360)
             //{
             //    throw new IllegalArgumentException("Incorrect input!");
