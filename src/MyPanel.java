@@ -31,6 +31,8 @@ public class MyPanel extends JPanel implements ActionListener
     int k = 0;
     int j = 0;
 
+    int distance = 0;
+
     int instruction = 0;
     Instruction[] instr_arr = new Instruction[9];
 
@@ -105,15 +107,18 @@ public class MyPanel extends JPanel implements ActionListener
         {
             dH++;
         }
-
+        */
 
         if (k > 0)
         {
             if (instruction <= k && instruction > 0)
             {
-                x = x + (int)(Math.cos(Math.toRadians(instr_arr[instruction - 1].getAlpha())) * instr_arr[instruction - 1].getH());
-                y = y + (int)(Math.sin(Math.toRadians(instr_arr[instruction - 1].getAlpha())) * instr_arr[instruction - 1].getH());
-                r = r + instr_arr[instruction - 1].getDr();
+                int j = instr_arr[instruction - 1].getIterator();
+
+                x = x + (int)(Math.cos(Math.toRadians(instr_arr[instruction - 1].part[j].getAlpha())) * instr_arr[instruction - 1].part[j].getH());
+                y = y + (int)(Math.sin(Math.toRadians(instr_arr[instruction - 1].part[j].getAlpha())) * instr_arr[instruction - 1].part[j].getH());
+                r = r + instr_arr[instruction - 1].part[j].getDr();
+
             }
         }
 
@@ -136,8 +141,6 @@ public class MyPanel extends JPanel implements ActionListener
             x = x + xVelocity;
         }
 
-
-         */
         repaint();
     }
 }

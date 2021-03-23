@@ -62,7 +62,7 @@ public class Main
                     throw new IllegalArgumentException("Incorrect input!");
                 }
 
-                instr.newPart(i, alphaGrad, h, dh, r, dr);
+                instr.newPart(alphaGrad, h, dh, r, dr);
             }
 
             frame.sendInstruction(instr);

@@ -37,6 +37,16 @@ public class InstructionPart {
         return alpha;
     }
 
+    public int getR()
+    {
+        return r;
+    }
+
+    public int getDh()
+    {
+        return dh;
+    }
+
     public int getDr()
     {
         return dr;
@@ -49,6 +59,6 @@ public class InstructionPart {
 
     public void printParameters()
     {
-        System.out.println("Alpha=" + alpha + " H=" + h + " dr=" + dr);
+        System.out.println("Alpha=" + alpha + " H=" + h + " dH=" + dh + " r=" + r + " dr=" + dr);
     }
 }
