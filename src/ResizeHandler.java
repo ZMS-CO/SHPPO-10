@@ -1,2 +1,2 @@
-public class ResizeHandler {
+public class ResizeHandler extends Handler {
 }
