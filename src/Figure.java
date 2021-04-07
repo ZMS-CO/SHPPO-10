@@ -6,5 +6,4 @@ public interface Figure {
     public void Move();
     public void Resize();
     public void Tick();
-
 }
