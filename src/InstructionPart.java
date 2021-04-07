@@ -9,14 +9,16 @@ public class InstructionPart {
     {
     }
 
-    Instruction(int _alpha, int _h, int _dr)
+    InstructionPart(int _alpha, double _h, double _dh, double _r, double _dr)
     {
         alpha = _alpha;
         h = _h;
+        dh = _dh;
+        r = _r;
         dr = _dr;
     }
 
-    public void setParameters(int _alpha, int _h, int _dr)
+    public void setParameters(int _alpha, double _h, double _dr)
     {
         alpha = _alpha;
         h = _h;
@@ -43,14 +45,24 @@ public class InstructionPart {
         return alpha;
     }
 
-    public int getDr()
+    public double getDr()
     {
         return dr;
     }
 
-    public int getH()
+    public double getH()
     {
         return h;
+    }
+
+    public double getDh()
+    {
+        return dh;
+    }
+
+    public double getR()
+    {
+        return r;
     }
 
     public void printParameters()
