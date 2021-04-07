@@ -1,44 +1,55 @@
 public class Figure {
     double x = 0;
     double y = 0;
-    double ResizeSpeed = 0;
+    double resizeSpeed = 0;
     double dH=0;
-    double Speed = 0;
+    double speed = 0;
     double alpha = 0;
-    double H = 0;
+    double h = 0;
     boolean isMoving = false;
     public void initCoord(double _x, double _y)
     {
-        x=_x;
-        y=_y;
+        x = _x;
+        y = _y;
     }
     public void reset()
     {
-        double ResizeSpeed = 0;
-        double dH=0;
-        double Speed = 0;
-        double alpha = 0;
-        double H = 0;
+        resizeSpeed = 0;
+        dH = 0;
+        speed = 0;
+        alpha = 0;
+        h = 0;
+        isMoving = false;
+
     }
     public void speed(double _Speed)
     {
-        Speed = _Speed;
+        speed = _Speed;
     }
-    public void Color()
+    public void color()
     {
 
     }
     public void resizeSpeed(double _ResizeSpeed)
     {
-        ResizeSpeed=_ResizeSpeed;
+        resizeSpeed=_ResizeSpeed;
     }
-    public void Move()
+    public void move()
     {
-        x = x + (Math.cos(alpha)*dH);
-        y = y + (Math.sin(alpha)*dH);
-        if(dH<H)
+        x = x + (Math.cos(alpha) * dH);
+        y = y + (Math.sin(alpha) * dH);
+        if(dH < h)
         {
-            dH=dH+Speed;
+            dH = dH + speed;
+        }
+    }
+
+    public void tick()
+    {
+        move();
+        if (dH >= h)
+        {
+            reset();
         }
     }
 }
