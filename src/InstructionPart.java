@@ -1,14 +1,12 @@
 public class InstructionPart {
     int alpha = 0;
     double h = 0;
+    double dh = 0;
     double r = 0;
     double dr = 0;
 
-    Instruction()
+    InstructionPart()
     {
-        int alpha = 0;
-        int h = 0;
-        int dr = 0;
     }
 
     Instruction(int _alpha, int _h, int _dr)
@@ -57,6 +55,6 @@ public class InstructionPart {
 
     public void printParameters()
     {
-        System.out.println("Alpha=" + alpha + " H=" + h + " dr=" + dr);
+        System.out.println("Alpha=" + alpha + " H=" + h + " dH=" + dh + " R=" + r + " dR=" + dr);
     }
 }

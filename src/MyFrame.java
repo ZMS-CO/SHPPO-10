@@ -22,8 +22,6 @@ public class MyFrame extends JFrame implements KeyListener
         this.addKeyListener(this);
         this.setVisible(true);
 
-
-
     }
 
     public void sendInstruction(Instruction instr)
