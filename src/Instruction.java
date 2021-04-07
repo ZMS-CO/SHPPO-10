@@ -1,62 +1,43 @@
 public class Instruction
 {
-    int alpha = 0;
-    int h = 0;
-    int dr = 0;
 
-    Instruction()
-    {
-        int alpha = 0;
-        int h = 0;
-        int dr = 0;
-    }
 
-    Instruction(int _alpha, int _h, int _dr)
-    {
-        alpha = _alpha;
-        h = _h;
-        dr = _dr;
-    }
+        InstructionPart[] part;
+        int n;
+        int iterator;
 
-    public void setParameters(int _alpha, int _h, int _dr)
-    {
-        alpha = _alpha;
-        h = _h;
-        dr = _dr;
-    }
+        Instruction()
+        {
+            part = new InstructionPart[10];
+            n = 0;
+            iterator = 0;
+        }
 
-    public void setAlpha(int val)
-    {
-        alpha = val;
-    }
+        public void newPart(int alpha, int h, int dh, int r, int dr)
+        {
+            n += 1;
+            part[n] = new InstructionPart(alpha, h, dh, r, dr);
+        }
 
-    public void setDr(int val)
-    {
-        dr = val;
-    }
+        public int getIterator()
+        {
+            return iterator;
+        }
 
-    public void setH(int val)
-    {
-        h = val;
-    }
+        public void nextIterator()
+        {
+            iterator ++;
+        }
 
-    public int getAlpha()
-    {
-        return alpha;
-    }
+        public void printParameters()
+        {
+            for (int i = 0; i < n; i++)
+            {
+                part[i].printParameters();
+            }
+            System.out.println();
+        }
 
-    public int getDr()
-    {
-        return dr;
-    }
 
-    public int getH()
-    {
-        return h;
-    }
 
-    public void printParameters()
-    {
-        System.out.println("Alpha=" + alpha + " H=" + h + " dr=" + dr);
-    }
 }
