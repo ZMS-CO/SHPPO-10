@@ -103,7 +103,7 @@ public class MyPanel extends JPanel implements ActionListener
             dH++;
         }
 
-        */
+
 
         if (k > 0)
         {
@@ -111,9 +111,11 @@ public class MyPanel extends JPanel implements ActionListener
             {
                 x = x + (int)(Math.cos(Math.toRadians(instr_arr[instruction - 1].getAlpha())) * instr_arr[instruction - 1].getH());
                 y = y + (int)(Math.sin(Math.toRadians(instr_arr[instruction - 1].getAlpha())) * instr_arr[instruction - 1].getH());
-                r = r + instr_arr[instruction - 1].getDr();
+                r = r + (int)(instr_arr[instruction - 1].getDr());
             }
         }
+        */
+
 
         if (instruction == 10 && y - r > 4)
         {

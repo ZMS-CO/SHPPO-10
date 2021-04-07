@@ -6,7 +6,7 @@ public class Instruction
 
         ArrayList<InstructionPart> parts;
         int n;
-        int iterator;
+        int iterator = 0;
 
         Instruction()
         {
@@ -14,10 +14,17 @@ public class Instruction
             iterator = 0;
         }
 
+        Instruction(ArrayList<InstructionPart> _parts)
+        {
+            parts = _parts;
+            n = parts.size();
+            iterator = 0;
+        }
+
         public void newPart(int alpha, int h, int dh, int r, int dr)
         {
             n += 1;
-            parts[n] = new InstructionPart(alpha, h, dh, r, dr);
+            parts.add(new InstructionPart(alpha, h, dh, r, dr));
         }
 
         public int getIterator()
@@ -34,7 +41,7 @@ public class Instruction
         {
             for (int i = 0; i < n; i++)
             {
-                parts[i].printParameters();
+                parts.get(i).printParameters();
             }
             System.out.println();
         }
