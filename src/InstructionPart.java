@@ -18,10 +18,12 @@ public class InstructionPart {
         dr = _dr;
     }
 
-    public void setParameters(int _alpha, double _h, double _dr)
+    public void setParameters(int _alpha, double _h, double _dh, double _r, double _dr)
     {
         alpha = _alpha;
         h = _h;
+        dh = _dh;
+        r = _r;
         dr = _dr;
     }
 

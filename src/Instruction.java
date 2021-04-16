@@ -46,6 +46,11 @@ public class Instruction
             System.out.println();
         }
 
+        public InstructionPart getIns()
+        {
+            return parts.get(iterator);
+        }
+
 
 
 }

@@ -1,17 +1,31 @@
 public class Figure {
+
     double x = 0;
     double y = 0;
-    double resizeSpeed = 0;
-    double dH=0;
-    double speed = 0;
-    double alpha = 0;
+
     double h = 0;
+    double dH = 0;
+    double speed = 0;
+
+    double alpha = 0;
+
+    double dimension = 0;
+    double targetDimension = 0;
+    double resizeSpeed = 0;
+
     boolean isMoving = false;
+
     public void initCoord(double _x, double _y)
     {
         x = _x;
         y = _y;
     }
+
+    public boolean isMoving()
+    {
+        return isMoving;
+    }
+
     public void reset()
     {
         resizeSpeed = 0;
@@ -22,18 +36,37 @@ public class Figure {
         isMoving = false;
 
     }
-    public void speed(double _Speed)
+
+    public void setSpeed(double _Speed)
     {
         speed = _Speed;
     }
-    public void color()
+
+    public void setColor()
     {
 
     }
-    public void resizeSpeed(double _ResizeSpeed)
+
+    public void setResizeSpeed(double _resizeSpeed)
     {
-        resizeSpeed=_ResizeSpeed;
+        resizeSpeed = _resizeSpeed;
     }
+
+    public void setTargetDimension(double targetDim)
+    {
+        targetDimension = targetDim;
+    }
+
+    public void setH(double _h)
+    {
+        h = _h;
+    }
+
+    public void setAngle(double _alpha)
+    {
+        alpha = _alpha;
+    }
+
     public void move()
     {
         x = x + (Math.cos(alpha) * dH);
@@ -44,12 +77,29 @@ public class Figure {
         }
     }
 
+    public void resize()
+    {
+        if (dimension < targetDimension && resizeSpeed > 0 || dimension > targetDimension && resizeSpeed < 0)
+            dimension = dimension + resizeSpeed;
+    }
+
     public void tick()
     {
         move();
-        if (dH >= h)
+        resize();
+        if (dH >= h && (dimension >= targetDimension && resizeSpeed > 0) || (dimension <= targetDimension && resizeSpeed < 0) || resizeSpeed == 0)
         {
             reset();
         }
+    }
+
+    public double getX()
+    {
+        return x;
+    }
+
+    public double getY()
+    {
+        return y;
     }
 }

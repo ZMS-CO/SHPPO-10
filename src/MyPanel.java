@@ -31,6 +31,10 @@ public class MyPanel extends JPanel implements ActionListener
     int instruction = 0;
     Instruction[] instr_arr = new Instruction[9];
 
+    Circle circle = new Circle();
+
+    InstructionsHandler instructionsHandler = new InstructionsHandler();
+
 
 
     MyPanel()
@@ -54,7 +58,8 @@ public class MyPanel extends JPanel implements ActionListener
         Graphics2D g2D = (Graphics2D) g;
         g2D.setStroke(new BasicStroke(10));
         g2D.setPaint(Color.red);
-        g2D.fillOval((int)(x - r), (int)(y - r), (int)(r * 2), (int)(r * 2));
+        g2D.fillOval((int)(circle.getX() - circle.getRadius()), (int)(circle.getY() - circle.getRadius()), (int)(circle.getRadius() * 2), (int)(circle.getRadius() * 2));
+
         //g2D.setPaint(Color.yellow);
         //g2D.drawLine((int)(x1), (int)(y1), (int)(x2) , (int)(y2));
         //g2D.setPaint(Color.green);
@@ -84,6 +89,14 @@ public class MyPanel extends JPanel implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e)
     {
+
+        if (!circle.isMoving())
+        {
+            instructionsHandler.execInstruction(circle, instr_arr, instruction);
+        }
+
+        circle.tick();
+
         /*
         if (x + r + 2 >= PANEL_WIDTH || xVelocity < 0 && x - r - 2 <= 0)
         {

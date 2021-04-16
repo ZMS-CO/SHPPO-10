@@ -1,4 +1,5 @@
-public class Handler {
+public class Handler
+{
     Handler nextHandler = null;
     public void handle(InstructionPart intr)
     {
