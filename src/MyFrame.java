@@ -1,34 +1,25 @@
 import java.awt.event.*;
 import javax.swing.*;
 
-
-
 public class MyFrame extends JFrame implements KeyListener
 {
-
     MyPanel panel;
 
     MyFrame()
     {
-
         panel = new MyPanel();
-
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
         this.add(panel);
         this.pack();
-
         this.setLocationRelativeTo(null);
         this.addKeyListener(this);
         this.setVisible(true);
-
     }
 
     public void sendInstruction(Instruction instr)
     {
         panel.addInstruction(instr);
     }
-
     public void printInstructions()
     {
         panel.printInstructions();
@@ -36,7 +27,6 @@ public class MyFrame extends JFrame implements KeyListener
 
     @Override
     public void keyTyped(KeyEvent e) {
-
     }
 
     @Override
@@ -79,7 +69,6 @@ public class MyFrame extends JFrame implements KeyListener
     @Override
     public void keyReleased(KeyEvent e) {
         //System.out.println(e.getKeyCode() + " -\t" + e.getKeyChar());
-
         switch(e.getKeyCode())
         {
             case KeyEvent.VK_UP:

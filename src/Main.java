@@ -22,7 +22,7 @@ public class Main
         double y = scan.nextDouble();
         System.out.print("R:");
         double initR = scan.nextDouble();
-        frame.panel.initCircle(x, y, initR);
+        frame.panel.circle.initFigure(x, y, initR);
 
 
 
@@ -37,8 +37,6 @@ public class Main
 
             for (int j = 0; j < k; j++) {
                 System.out.print("SubInstruction #" + (j + 1) + ":\tTowards border (0 - no, 1 - up, 2 - down, 3 - left, 4 - right): ");
-
-                //double[] buff_parameters = new double[5];
 
                 int alphaGrad = 0;
                 double h = 0;
@@ -96,10 +94,6 @@ public class Main
                 {
                     throw new IllegalArgumentException("Incorrect input!");
                 }
-
-
-
-                //instr_arr[i] = new Instruction(alphaGrad, dh, dr);
 
 
                 SubInstructions.add(new InstructionPart(alphaGrad, h, dh, r, dr));
