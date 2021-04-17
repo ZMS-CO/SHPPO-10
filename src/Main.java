@@ -16,9 +16,11 @@ public class Main
 
         MyFrame frame = new MyFrame();
 
-        System.out.println("Enter initial position:");
-
+        System.out.print("Enter initial position:\nX: ");
         double x = scan.nextDouble();
+        System.out.print("Y:");
+        double y = scan.nextDouble();
+        frame.panel.initCircle(x, y);
 
         System.out.println("Enter your instructions:");
 

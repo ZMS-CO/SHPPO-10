@@ -102,4 +102,9 @@ public class Figure {
     {
         return y;
     }
+
+    public void printParams()
+    {
+        System.out.println("x: " + x + "\ty: " + y);
+    }
 }

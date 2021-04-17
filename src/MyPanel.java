@@ -43,6 +43,8 @@ public class MyPanel extends JPanel implements ActionListener
         this.setPreferredSize(new Dimension(PANEL_WIDTH, PANEL_HEIGHT));
         timer = new Timer(50, this);
         timer.start();
+
+
         /*
         for (int i = 0; i < 9; i++)
         {
@@ -84,6 +86,11 @@ public class MyPanel extends JPanel implements ActionListener
         {
             instr_arr[i].printParameters();
         }
+    }
+
+    public void initCircle(double x, double y)
+    {
+        circle.initCoord(x, y);
     }
 
     @Override
