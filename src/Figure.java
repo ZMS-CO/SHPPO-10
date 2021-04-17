@@ -48,6 +48,8 @@ public class Figure {
         h = 0;
         isMoving = false;
 
+
+
     }
 
     public void setSpeed(double _Speed)

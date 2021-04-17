@@ -102,9 +102,14 @@ public class MyPanel extends JPanel implements ActionListener
 
         if (!circle.isMoving())
         {
-            instructionsHandler.execInstruction(circle, instr_arr, instruction);
-            if (instruction > 0)
-                circle.printParams();
+            //System.out.println("||");
+            if (instruction > 0) {
+                if (instructionsHandler.execInstruction(circle, instr_arr, instruction)) {
+                    instruction = 0;
+                }
+                if (instruction > 0)
+                    circle.printParams();
+            }
         }
 
         circle.tick();

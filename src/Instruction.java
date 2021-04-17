@@ -32,14 +32,38 @@ public class Instruction
             return iterator;
         }
 
-        public boolean nextIterator()
+        public void nextIterator()
+        {
+
+            iterator++;
+            System.out.println("next=" + iterator + " n=" + n);
+            /*
+            if (iterator < n)
+            {
+
+                return false;
+            }
+            else
+            {
+                iterator = 0;
+                return true;
+            }
+
+             */
+        }
+
+        public boolean validIterator()
         {
             if (iterator < n)
             {
-                iterator++;
+
                 return false;
             }
-            else return true;
+            else
+            {
+                iterator = 0;
+                return true;
+            }
         }
 
         public void printParameters()
@@ -53,6 +77,7 @@ public class Instruction
 
         public InstructionPart getIns()
         {
+            parts.get(iterator).printParameters();
             return parts.get(iterator);
         }
 
