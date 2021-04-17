@@ -29,6 +29,8 @@ public class MyFrame extends JFrame implements KeyListener
     public void keyTyped(KeyEvent e) {
     }
 
+
+    /*********Привязка клавиш к вызову инструкции********/
     @Override
     public void keyPressed(KeyEvent e) {
         int key = e.getKeyCode();
@@ -66,6 +68,7 @@ public class MyFrame extends JFrame implements KeyListener
 
     }
 
+    /************Клавиша отжата**************/
     @Override
     public void keyReleased(KeyEvent e) {
         //System.out.println(e.getKeyCode() + " -\t" + e.getKeyChar());

@@ -58,15 +58,10 @@ public class Main
                             alphaGrad = -90;
 
                     }
-
-
                 }
                 else {
-
-
                     System.out.print("\tAngle: ");
                     alphaGrad = -scan.nextInt();
-
                     System.out.print("\tH: ");
                     h = scan.nextDouble();
                     if (h < 0) {
@@ -80,14 +75,12 @@ public class Main
                 {
                     throw new IllegalArgumentException("Incorrect input!");
                 }
-
                 System.out.print("\tRadius: ");
                 double r = scan.nextDouble();
                 if (r < 0)
                 {
                     throw new IllegalArgumentException("Incorrect input!");
                 }
-
                 System.out.print("\tRadius velocity: ");
                 double dr = scan.nextDouble();
                 if (dr < 0)
@@ -95,21 +88,16 @@ public class Main
                     throw new IllegalArgumentException("Incorrect input!");
                 }
 
-
                 SubInstructions.add(new InstructionPart(alphaGrad, h, dh, r, dr));
                 SubInstructions.get(i).printParameters();
             }
-
             Instruction instr = new Instruction(SubInstructions);
             frame.sendInstruction(instr);
-
             frame.panel.printInstructions();
-
             if (i >= 8)
             {
                 break;
             }
-
             i ++;
         }
         

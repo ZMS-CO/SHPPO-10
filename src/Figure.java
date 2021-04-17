@@ -18,8 +18,6 @@ public class Figure {
 
     boolean isMoving = false;
 
-
-
     public void initCoord(double _x, double _y, double _dim)
     {
         x = _x;
@@ -34,7 +32,6 @@ public class Figure {
         initCoord(_x, _y, _r);
         printParams();
     }
-
 
     public boolean isMoving()
     {
