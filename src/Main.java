@@ -20,7 +20,11 @@ public class Main
         double x = scan.nextDouble();
         System.out.print("Y:");
         double y = scan.nextDouble();
-        frame.panel.initCircle(x, y);
+        System.out.print("R:");
+        double initR = scan.nextDouble();
+        frame.panel.initCircle(x, y, initR);
+
+
 
         System.out.println("Enter your instructions:");
 
@@ -63,7 +67,7 @@ public class Main
 
 
                     System.out.print("\tAngle: ");
-                    alphaGrad = -scan.nextInt();
+                    alphaGrad = scan.nextInt();
 
                     System.out.print("\tH: ");
                     h = scan.nextDouble();

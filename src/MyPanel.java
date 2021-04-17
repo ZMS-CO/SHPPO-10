@@ -88,18 +88,23 @@ public class MyPanel extends JPanel implements ActionListener
         }
     }
 
-    public void initCircle(double x, double y)
+    public void initCircle(double _x, double _y, double _r)
     {
-        circle.initCoord(x, y);
+        circle.initCoord(_x, _y, _r);
+        circle.printParams();
     }
 
     @Override
     public void actionPerformed(ActionEvent e)
     {
 
+
+
         if (!circle.isMoving())
         {
             instructionsHandler.execInstruction(circle, instr_arr, instruction);
+            if (instruction > 0)
+                circle.printParams();
         }
 
         circle.tick();
@@ -134,7 +139,7 @@ public class MyPanel extends JPanel implements ActionListener
                 r = r + (int)(instr_arr[instruction - 1].getDr());
             }
         }
-        */
+
 
 
         if (instruction == 10 && y - r > 4)
@@ -153,6 +158,7 @@ public class MyPanel extends JPanel implements ActionListener
         {
             x = x + xVelocity;
         }
+        */
         repaint();
     }
 }

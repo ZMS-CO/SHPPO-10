@@ -41,7 +41,8 @@ public class MyFrame extends JFrame implements KeyListener
 
     @Override
     public void keyPressed(KeyEvent e) {
-        switch(e.getKeyCode())
+        int key = e.getKeyCode();
+        switch(key)
         {
             case KeyEvent.VK_1:
                 {panel.setInstruction(1); break;}
@@ -72,6 +73,7 @@ public class MyFrame extends JFrame implements KeyListener
             case KeyEvent.VK_RIGHT:
                 {panel.setInstruction(13); break;}
         }
+
     }
 
     @Override

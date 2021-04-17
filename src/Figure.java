@@ -15,15 +15,21 @@ public class Figure {
 
     boolean isMoving = false;
 
-    public void initCoord(double _x, double _y)
+    public void initCoord(double _x, double _y, double _dim)
     {
         x = _x;
         y = _y;
+        dimension = _dim;
     }
 
     public boolean isMoving()
     {
         return isMoving;
+    }
+
+    public void setMoving()
+    {
+        isMoving = true;
     }
 
     public void reset()
@@ -69,8 +75,8 @@ public class Figure {
 
     public void move()
     {
-        x = x + (Math.cos(alpha) * dH);
-        y = y + (Math.sin(alpha) * dH);
+        x = x + (Math.cos(alpha) * speed);
+        y = y + (Math.sin(alpha) * speed);
         if(dH < h)
         {
             dH = dH + speed;
@@ -91,6 +97,8 @@ public class Figure {
         {
             reset();
         }
+        //System.out.print(1);
+        //printParams();
     }
 
     public double getX()
@@ -105,6 +113,6 @@ public class Figure {
 
     public void printParams()
     {
-        System.out.println("x: " + x + "\ty: " + y);
+        System.out.println("x: " + x + "\ty: " + y + "\ntargetH: " + h + "\tcurrentH: " + dH + "\tspeed: " + speed + "\nalpha: " + alpha + "\ndimension: " + dimension + "\ttargetDimension: " + targetDimension + "\tresizeSpeed: " + resizeSpeed);
     }
 }
