@@ -27,6 +27,12 @@ public class Figure {
         dimension = _dim;
     }
 
+    public void initFigure(double _x, double _y, double _r)
+    {
+        initCoord(_x, _y, _r);
+        printParams();
+    }
+
     public boolean isMoving()
     {
         return isMoving;

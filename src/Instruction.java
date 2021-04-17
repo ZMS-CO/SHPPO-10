@@ -2,17 +2,9 @@ import java.util.ArrayList;
 
 public class Instruction
 {
-
-
         ArrayList<InstructionPart> parts;
         int n;
         int iterator = 0;
-
-        Instruction()
-        {
-            n = 0;
-            iterator = 0;
-        }
 
         Instruction(ArrayList<InstructionPart> _parts)
         {
@@ -80,7 +72,4 @@ public class Instruction
             parts.get(iterator).printParameters();
             return parts.get(iterator);
         }
-
-
-
 }
