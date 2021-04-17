@@ -67,7 +67,7 @@ public class Main
 
 
                     System.out.print("\tAngle: ");
-                    alphaGrad = scan.nextInt();
+                    alphaGrad = -scan.nextInt();
 
                     System.out.print("\tH: ");
                     h = scan.nextDouble();

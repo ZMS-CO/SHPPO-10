@@ -3,6 +3,9 @@ public class Figure {
     double x = 0;
     double y = 0;
 
+    double initX = 0;
+    double initY = 0;
+
     double h = 0;
     double dH = 0;
     double speed = 0;
@@ -19,6 +22,8 @@ public class Figure {
     {
         x = _x;
         y = _y;
+        initX = _x;
+        initY = _y;
         dimension = _dim;
     }
 
@@ -34,6 +39,8 @@ public class Figure {
 
     public void reset()
     {
+        initX = x;
+        initY = y;
         resizeSpeed = 0;
         dH = 0;
         speed = 0;
@@ -75,8 +82,8 @@ public class Figure {
 
     public void move()
     {
-        x = x + (Math.cos(alpha) * speed);
-        y = y + (Math.sin(alpha) * speed);
+        x = initX + (Math.cos(Math.toRadians(alpha)) * dH);
+        y = initY + (Math.sin(Math.toRadians(alpha)) * dH);
         if(dH < h)
         {
             dH = dH + speed;

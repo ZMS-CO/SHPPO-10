@@ -19,6 +19,7 @@ public class InstructionsHandler {
             circle.setTargetDimension(ins[currentInstruction - 1].getIns().getR());
             circle.setResizeSpeed(ins[currentInstruction - 1].getIns().getDr());
             circle.setMoving();
+            ins[currentInstruction - 1].nextIterator();
         }
 
         i++;

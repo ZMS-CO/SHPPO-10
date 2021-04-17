@@ -32,9 +32,14 @@ public class Instruction
             return iterator;
         }
 
-        public void nextIterator()
+        public boolean nextIterator()
         {
-            iterator ++;
+            if (iterator < n)
+            {
+                iterator++;
+                return false;
+            }
+            else return true;
         }
 
         public void printParameters()
