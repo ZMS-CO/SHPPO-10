@@ -130,4 +130,33 @@ public class Figure {
     {
         System.out.println("x: " + x + "\ty: " + y + "\ntargetH: " + h + "\tcurrentH: " + dH + "\tspeed: " + speed + "\nalpha: " + alpha + "\ndimension: " + dimension + "\ttargetDimension: " + targetDimension + "\tresizeSpeed: " + resizeSpeed);
     }
+
+    public void towardsBorder(int width, int height, int direction)
+    {
+        System.out.print("dir=" + direction);
+        switch (direction) {
+
+            case -1: {
+                h = y - dimension;
+                break;
+            }
+
+            case -2: {
+                h = height - y - dimension;
+                break;
+            }
+
+            case -3: {
+                h = x - dimension;
+                break;
+            }
+
+            case -4: {
+                h = width - x - dimension;
+                break;
+            }
+        }
+        System.out.print("h(circle)=" + h + "\n");
+
+    }
 }

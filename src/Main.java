@@ -48,14 +48,36 @@ public class Main
                 if (toBorder > 0)
                 {
                     switch (toBorder) {
-                        case 1 ->
-                            alphaGrad = 0;
-                        case 2 ->
-                            alphaGrad = 90;
-                        case 3 ->
-                            alphaGrad = -180;
-                        case 4 ->
-                            alphaGrad = -90;
+                        case 1:
+                            {
+                                alphaGrad = -90;
+                                h = -1;
+                                break;
+                            }
+
+                        case 2:
+                            {
+                                alphaGrad = 90;
+                                h = -2;
+                                break;
+                            }
+
+                        case 3:
+                            {
+                                alphaGrad = 180;
+                                h = -3;
+                                break;
+                            }
+
+
+
+                        case 4:
+                            {
+                                alphaGrad = 0;
+                                h = -4;
+                                break;
+                            }
+
 
                     }
                 }
@@ -71,7 +93,7 @@ public class Main
 
                 System.out.print("\tdH: ");
                 double dh = scan.nextDouble();
-                if (dh < 0)
+                if (dh < 0 || dh == 0 && h > 0)
                 {
                     throw new IllegalArgumentException("Incorrect input!");
                 }

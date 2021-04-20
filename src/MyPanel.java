@@ -6,15 +6,15 @@ public class MyPanel extends JPanel implements ActionListener
 {
     /***********Параметры Panel***********/
     Timer timer;
-    int PANEL_WIDTH = 1920;
-    int PANEL_HEIGHT = 1080;
+    int PANEL_WIDTH = 1440;
+    int PANEL_HEIGHT = 810;
     Circle circle = new Circle();
 
     /**********Параметры инструкций**************/
     int k = 0;
     int instruction = 0;
     Instruction[] instr_arr = new Instruction[9];
-    InstructionsHandler instructionsHandler = new InstructionsHandler();
+    InstructionsHandler instructionsHandler = new InstructionsHandler(PANEL_WIDTH, PANEL_HEIGHT);
 
     /**********Настройка окна**************/
     MyPanel()
@@ -41,10 +41,12 @@ public class MyPanel extends JPanel implements ActionListener
         this.instruction = instr;
         //System.out.println(instr);
     }
+
     public void addInstruction(Instruction instr)
     {
         instr_arr[k++] = instr;
     }
+
     public void printInstructions()
     {
         for (int i = 0; i < k; i++)
@@ -60,8 +62,10 @@ public class MyPanel extends JPanel implements ActionListener
         if (!circle.isMoving())
         {
             //System.out.println("||");
-            if (instruction > 0) {
-                if (instructionsHandler.execInstruction(circle, instr_arr, instruction)) {
+            if (instruction > 0)
+            {
+                if (instructionsHandler.execInstruction(circle, instr_arr, instruction))
+                {
                     instruction = 0;
                 }
                 if (instruction > 0)
