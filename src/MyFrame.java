@@ -4,7 +4,7 @@ import javax.swing.*;
 public class MyFrame extends JFrame implements KeyListener
 {
     MyPanel panel;
-
+    /*********Создание панели и первоначальная настройка********/
     MyFrame()
     {
         panel = new MyPanel();
@@ -16,15 +16,14 @@ public class MyFrame extends JFrame implements KeyListener
         this.setVisible(true);
     }
 
-
     @Override
     public void keyTyped(KeyEvent e) {
     }
 
-
     /*********Привязка клавиш к вызову инструкции********/
     @Override
-    public void keyPressed(KeyEvent e) {
+    public void keyPressed(KeyEvent e)
+    {
         int key = e.getKeyCode();
         switch(key)
         {
@@ -62,7 +61,8 @@ public class MyFrame extends JFrame implements KeyListener
 
     /************Клавиша отжата**************/
     @Override
-    public void keyReleased(KeyEvent e) {
+    public void keyReleased(KeyEvent e)
+    {
         //System.out.println(e.getKeyCode() + " -\t" + e.getKeyChar());
         switch(e.getKeyCode())
         {

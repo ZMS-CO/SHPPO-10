@@ -60,9 +60,6 @@ public class Figure {
         alpha = 0;
         h = 0;
         isMoving = false;
-
-
-
     }
 
     /*************Установка параметров*******/
@@ -140,24 +137,25 @@ public class Figure {
     public void towardsBorder(int width, int height, int direction)
     {
         System.out.print("dir=" + direction);
-        switch (direction) {
-
-            case -1: {
+        switch (direction)
+        {
+            case -1:
+            {
                 h = y - targetDimension;
                 break;
             }
-
-            case -2: {
+            case -2:
+            {
                 h = height - y - targetDimension;
                 break;
             }
-
-            case -3: {
+            case -3:
+            {
                 h = x - targetDimension;
                 break;
             }
-
-            case -4: {
+            case -4:
+            {
                 h = width - x - targetDimension;
                 break;
             }
