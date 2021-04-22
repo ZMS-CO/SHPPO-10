@@ -10,7 +10,8 @@ public class MyPanel extends JPanel implements ActionListener
     int PANEL_HEIGHT = 810;
 
     /**********Объект круг**************/
-    Circle circle = new Circle();
+    Circle figure;
+
 
     /**********Обработчик инструкций**************/
     InstructionsHandler instructionsHandler = new InstructionsHandler(PANEL_WIDTH, PANEL_HEIGHT);
@@ -22,6 +23,7 @@ public class MyPanel extends JPanel implements ActionListener
         this.setPreferredSize(new Dimension(PANEL_WIDTH, PANEL_HEIGHT));
         timer = new Timer(50, this);
         timer.start();
+        figure = new Circle();
     }
 
     /**********Отрисовка фигуры**************/
@@ -31,27 +33,28 @@ public class MyPanel extends JPanel implements ActionListener
         Graphics2D g2D = (Graphics2D) g;
         g2D.setStroke(new BasicStroke(10));
         g2D.setPaint(Color.red);
-        g2D.fillOval((int)(circle.getX() - circle.getRadius()), (int)(circle.getY() - circle.getRadius()), (int)(circle.getRadius() * 2), (int)(circle.getRadius() * 2));
+        g2D.fillOval((int)(figure.getX() - figure.getRadius()), (int)(figure.getY() - figure.getRadius()), (int)(figure.getRadius() * 2), (int)(figure.getRadius() * 2));
     }
 
     /**************Выполнение тика и перерисовка фигуры*******************/
     @Override
     public void actionPerformed(ActionEvent e)
     {
-        if (!circle.isMoving())
+        if (!figure.isMoving())
         {
             //System.out.println("||");
             if (instructionsHandler.getIstruction() > 0)
             {
-                if (instructionsHandler.execInstruction(circle))
+                if (instructionsHandler.execInstruction(figure))
                 {
                     instructionsHandler.setInstruction(0);
                 }
                 if (instructionsHandler.getIstruction() > 0)
-                    circle.printParams();
+                    figure.printParams();
             }
         }
-        circle.tick();
+        figure.tick();
         repaint();
     }
+
 }

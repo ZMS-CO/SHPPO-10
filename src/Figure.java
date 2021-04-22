@@ -61,7 +61,7 @@ public class Figure {
         h = 0;
         isMoving = false;
 
-
+        //System.out.println("dim=" + dimension);
 
     }
 

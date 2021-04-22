@@ -21,7 +21,7 @@ public class Main
         double y = scan.nextDouble();
         System.out.print("R: ");
         double initR = scan.nextDouble();
-        frame.panel.circle.initFigure(x, y, initR);
+        frame.panel.figure.initFigure(x, y, initR);
 
         System.out.println("Enter your instructions:");
 
