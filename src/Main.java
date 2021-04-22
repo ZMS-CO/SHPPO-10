@@ -8,7 +8,6 @@ public class Main
     {
         //Instruction[] instr_arr = new Instruction[9];
 
-
         Scanner scan = new Scanner(System.in);
         int i = 0;
 
@@ -23,8 +22,6 @@ public class Main
         System.out.print("R: ");
         double initR = scan.nextDouble();
         frame.panel.circle.initFigure(x, y, initR);
-
-
 
         System.out.println("Enter your instructions:");
 
@@ -54,31 +51,24 @@ public class Main
                                 h = -1;
                                 break;
                             }
-
                         case 2:
                             {
                                 alphaGrad = 90;
                                 h = -2;
                                 break;
                             }
-
                         case 3:
                             {
                                 alphaGrad = 180;
                                 h = -3;
                                 break;
                             }
-
-
-
                         case 4:
                             {
                                 alphaGrad = 0;
                                 h = -4;
                                 break;
                             }
-
-
                     }
                 }
                 else {
@@ -90,7 +80,6 @@ public class Main
                         throw new IllegalArgumentException("Incorrect input!");
                     }
                 }
-
                 System.out.print("\tdH: ");
                 double dh = scan.nextDouble();
                 if (dh < 0 || dh == 0 && h > 0)
