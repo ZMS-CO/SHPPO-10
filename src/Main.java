@@ -18,9 +18,9 @@ public class Main
 
         System.out.print("Enter initial position:\nX: ");
         double x = scan.nextDouble();
-        System.out.print("Y:");
+        System.out.print("Y: ");
         double y = scan.nextDouble();
-        System.out.print("R:");
+        System.out.print("R: ");
         double initR = scan.nextDouble();
         frame.panel.circle.initFigure(x, y, initR);
 
@@ -114,8 +114,8 @@ public class Main
                 SubInstructions.get(i).printParameters();
             }
             Instruction instr = new Instruction(SubInstructions);
-            frame.sendInstruction(instr);
-            frame.panel.printInstructions();
+            frame.panel.instructionsHandler.addInstruction(instr);
+            frame.panel.instructionsHandler.printInstructions();
             if (i >= 8)
             {
                 break;

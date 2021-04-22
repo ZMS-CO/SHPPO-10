@@ -16,14 +16,6 @@ public class MyFrame extends JFrame implements KeyListener
         this.setVisible(true);
     }
 
-    public void sendInstruction(Instruction instr)
-    {
-        panel.addInstruction(instr);
-    }
-    public void printInstructions()
-    {
-        panel.printInstructions();
-    }
 
     @Override
     public void keyTyped(KeyEvent e) {
@@ -37,33 +29,33 @@ public class MyFrame extends JFrame implements KeyListener
         switch(key)
         {
             case KeyEvent.VK_1:
-                {panel.setInstruction(1); break;}
+                {panel.instructionsHandler.setInstruction(1); break;}
             case KeyEvent.VK_2:
-                {panel.setInstruction(2); break;}
+                {panel.instructionsHandler.setInstruction(2); break;}
             case KeyEvent.VK_3:
-                {panel.setInstruction(3); break;}
+                {panel.instructionsHandler.setInstruction(3); break;}
             case KeyEvent.VK_4:
-                {panel.setInstruction(4); break;}
+                {panel.instructionsHandler.setInstruction(4); break;}
             case KeyEvent.VK_5:
-                {panel.setInstruction(5); break;}
+                {panel.instructionsHandler.setInstruction(5); break;}
             case KeyEvent.VK_6:
-                {panel.setInstruction(6); break;}
+                {panel.instructionsHandler.setInstruction(6); break;}
             case KeyEvent.VK_7:
-                {panel.setInstruction(7); break;}
+                {panel.instructionsHandler.setInstruction(7); break;}
             case KeyEvent.VK_8:
-                {panel.setInstruction(8); break;}
+                {panel.instructionsHandler.setInstruction(8); break;}
             case KeyEvent.VK_9:
-                {panel.setInstruction(9); break;}
+                {panel.instructionsHandler.setInstruction(9); break;}
             case KeyEvent.VK_SPACE:
-                {panel.setInstruction(0); break;}
+                {panel.instructionsHandler.setInstruction(0); break;}
             case KeyEvent.VK_UP:
-                {panel.setInstruction(10); break;}
+                {panel.instructionsHandler.setInstruction(10); break;}
             case KeyEvent.VK_DOWN:
-                {panel.setInstruction(11); break;}
+                {panel.instructionsHandler.setInstruction(11); break;}
             case KeyEvent.VK_LEFT:
-                {panel.setInstruction(12); break;}
+                {panel.instructionsHandler.setInstruction(12); break;}
             case KeyEvent.VK_RIGHT:
-                {panel.setInstruction(13); break;}
+                {panel.instructionsHandler.setInstruction(13); break;}
         }
 
     }
@@ -75,13 +67,13 @@ public class MyFrame extends JFrame implements KeyListener
         switch(e.getKeyCode())
         {
             case KeyEvent.VK_UP:
-                panel.setInstruction(0);
+                panel.instructionsHandler.setInstruction(0);
             case KeyEvent.VK_DOWN:
-                panel.setInstruction(0);
+                panel.instructionsHandler.setInstruction(0);
             case KeyEvent.VK_LEFT:
-                panel.setInstruction(0);
+                panel.instructionsHandler.setInstruction(0);
             case KeyEvent.VK_RIGHT:
-                panel.setInstruction(0);
+                panel.instructionsHandler.setInstruction(0);
         }
 
     }
