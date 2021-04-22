@@ -43,8 +43,13 @@ public class InstructionsHandler {
                 circle.towardsBorder(panel_width, panel_height, (int) h);
             else circle.setH(h);
             circle.setSpeed(instr_arr[currentInstruction - 1].getIns().getDh());
-            circle.setTargetDimension(instr_arr[currentInstruction - 1].getIns().getR());
-            circle.setResizeSpeed(instr_arr[currentInstruction - 1].getIns().getDr());
+            double r = instr_arr[currentInstruction - 1].getIns().getR();
+            circle.setTargetDimension(r);
+
+            double dr = instr_arr[currentInstruction - 1].getIns().getDr();
+            if (r < circle.getRadius())
+                dr = -dr;
+            circle.setResizeSpeed(dr);
             circle.setMoving();
 
             //i++;

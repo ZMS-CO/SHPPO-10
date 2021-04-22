@@ -143,22 +143,22 @@ public class Figure {
         switch (direction) {
 
             case -1: {
-                h = y - dimension;
+                h = y - targetDimension;
                 break;
             }
 
             case -2: {
-                h = height - y - dimension;
+                h = height - y - targetDimension;
                 break;
             }
 
             case -3: {
-                h = x - dimension;
+                h = x - targetDimension;
                 break;
             }
 
             case -4: {
-                h = width - x - dimension;
+                h = width - x - targetDimension;
                 break;
             }
         }
