@@ -8,6 +8,8 @@ public class MyPanel extends JPanel implements ActionListener
     Timer timer;
     int PANEL_WIDTH = 1440;
     int PANEL_HEIGHT = 810;
+
+    /**********Объект круг**************/
     Circle circle = new Circle();
 
     /**********Обработчик инструкций**************/

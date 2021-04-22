@@ -66,13 +66,7 @@ public class MyFrame extends JFrame implements KeyListener
         //System.out.println(e.getKeyCode() + " -\t" + e.getKeyChar());
         switch(e.getKeyCode())
         {
-            case KeyEvent.VK_UP:
-                panel.instructionsHandler.setInstruction(0);
-            case KeyEvent.VK_DOWN:
-                panel.instructionsHandler.setInstruction(0);
-            case KeyEvent.VK_LEFT:
-                panel.instructionsHandler.setInstruction(0);
-            case KeyEvent.VK_RIGHT:
+            case KeyEvent.VK_UP, KeyEvent.VK_RIGHT, KeyEvent.VK_DOWN, KeyEvent.VK_LEFT ->
                 panel.instructionsHandler.setInstruction(0);
         }
 

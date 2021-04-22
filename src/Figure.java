@@ -1,23 +1,26 @@
 public class Figure {
 
-    double x = 0;
-    double y = 0;
+    /*************Параметры круга*******/
 
-    double initX = 0;
-    double initY = 0;
+    double x = 0;                   // координата x
+    double y = 0;                   // координата y
 
-    double h = 0;
-    double dH = 0;
-    double speed = 0;
+    double initX = 0;               // координата x в начале движения
+    double initY = 0;               // координата y в начале движения
 
-    double alpha = 0;
+    double h = 0;                   // дальность движения
+    double dH = 0;                  // вспомогательная переменная для движения
+    double speed = 0;               // скорость движения
 
-    double dimension = 0;
-    double targetDimension = 0;
-    double resizeSpeed = 0;
+    double alpha = 0;               // угол движения
 
-    boolean isMoving = false;
+    double dimension = 0;           // размер фигуры
+    double targetDimension = 0;     // конечный размер
+    double resizeSpeed = 0;         // скорость изменения размера
 
+    boolean isMoving = false;       // состояние движения
+
+    /*************Начальные координаты*******/
     public void initCoord(double _x, double _y, double _dim)
     {
         x = _x;
@@ -27,22 +30,26 @@ public class Figure {
         dimension = _dim;
     }
 
+    /*************Инициализация фигуры*******/
     public void initFigure(double _x, double _y, double _r)
     {
         initCoord(_x, _y, _r);
         printParams();
     }
 
+    /*************Проверка на движение*******/
     public boolean isMoving()
     {
         return isMoving;
     }
 
+    /*************Установка состояния движения*******/
     public void setMoving()
     {
         isMoving = true;
     }
 
+    /*************Сброс параметров*******/
     public void reset()
     {
         initX = x;
@@ -58,14 +65,10 @@ public class Figure {
 
     }
 
+    /*************Установка параметров*******/
     public void setSpeed(double _Speed)
     {
         speed = _Speed;
-    }
-
-    public void setColor()
-    {
-
     }
 
     public void setResizeSpeed(double _resizeSpeed)
@@ -88,6 +91,7 @@ public class Figure {
         alpha = _alpha;
     }
 
+    /*************Шаг движения*******/
     public void move()
     {
         x = initX + (Math.cos(Math.toRadians(alpha)) * dH);
@@ -98,17 +102,19 @@ public class Figure {
         }
     }
 
+    /*************Шаг изменения размера*******/
     public void resize()
     {
         if (dimension < targetDimension && resizeSpeed > 0 || dimension > targetDimension && resizeSpeed < 0)
             dimension = dimension + resizeSpeed;
     }
 
+    /*************Что происходит при срабатывании таймера*******/
     public void tick()
     {
         move();
         resize();
-        if (dH >= h && (dimension >= targetDimension && resizeSpeed > 0) || (dimension <= targetDimension && resizeSpeed < 0) || resizeSpeed == 0)
+        if (dH >= h && ((dimension >= targetDimension && resizeSpeed > 0) || (dimension <= targetDimension && resizeSpeed < 0) || resizeSpeed == 0 || targetDimension == 0))
         {
             reset();
         }

@@ -13,6 +13,7 @@ public class InstructionsHandler {
         panel_height = _h;
     }
 
+    /**************Выполнение инструкции***************/
     public boolean execInstruction(Circle circle)
     {
         /*
