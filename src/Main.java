@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class Main
 {
-
     public static void main(String[] args)
     {
         //Instruction[] instr_arr = new Instruction[9];
