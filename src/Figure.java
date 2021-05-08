@@ -137,7 +137,7 @@ public class Figure {
 
     public void towardsBorder(int width, int height, int direction)
     {
-        System.out.print("dir=" + direction);
+        System.out.print("dir=" + direction + " targetDim=" + targetDimension);
         switch (direction)
         {
             case -1:

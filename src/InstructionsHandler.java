@@ -29,6 +29,8 @@ public class InstructionsHandler {
         {
             //System.out.println(ins[currentInstruction - 1].getIterator());
 
+            boolean toBorderFlag = false;
+
             if (instr_arr[currentInstruction - 1].validIterator())
             {
                 System.out.print(1);
@@ -40,11 +42,13 @@ public class InstructionsHandler {
             double h = instr_arr[currentInstruction - 1].getIns().getH();
             System.out.print("h=" + h + "\n");
             if (h < 0)
-                circle.towardsBorder(panel_width, panel_height, (int) h);
+                toBorderFlag = true;
             else circle.setH(h);
             circle.setSpeed(instr_arr[currentInstruction - 1].getIns().getDh());
             double r = instr_arr[currentInstruction - 1].getIns().getR();
             circle.setTargetDimension(r);
+            if (toBorderFlag)
+                circle.towardsBorder(panel_width, panel_height, (int) h);
 
             double dr = instr_arr[currentInstruction - 1].getIns().getDr();
             if (r < circle.getRadius())
