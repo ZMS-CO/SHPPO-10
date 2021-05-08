@@ -87,7 +87,7 @@ public class Main
                 }
                 System.out.print("\tRadius: ");
                 double r = scan.nextDouble();
-                if (r < 0)
+                if (r <= 0)
                 {
                     throw new IllegalArgumentException("Incorrect input!");
                 }
@@ -99,7 +99,7 @@ public class Main
                 }
 
                 SubInstructions.add(new InstructionPart(alphaGrad, h, dh, r, dr));
-                SubInstructions.get(i).printParameters();
+                SubInstructions.get(j).printParameters();
             }
             Instruction instr = new Instruction(SubInstructions);
             frame.panel.instructionsHandler.addInstruction(instr);
