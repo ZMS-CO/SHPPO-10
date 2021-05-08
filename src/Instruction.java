@@ -28,7 +28,9 @@ public class Instruction
         {
 
             iterator++;
-            System.out.println("next=" + iterator + " n=" + n);
+
+            // System.out.println("next=" + iterator + " n=" + n);
+
             /*
             if (iterator < n)
             {
@@ -69,7 +71,7 @@ public class Instruction
 
         public InstructionPart getIns()
         {
-            parts.get(iterator).printParameters();
+            //parts.get(iterator).printParameters();
             return parts.get(iterator);
         }
 }

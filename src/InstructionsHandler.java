@@ -33,14 +33,18 @@ public class InstructionsHandler {
 
             if (instr_arr[currentInstruction - 1].validIterator())
             {
-                System.out.print(1);
+
+                //System.out.print(1);
+
                 setIdle(circle);
                 return true;
             }
 
             circle.setAngle(instr_arr[currentInstruction - 1].getIns().getAlpha());
             double h = instr_arr[currentInstruction - 1].getIns().getH();
-            System.out.print("h=" + h + "\n");
+
+            //System.out.print("h=" + h + "\n");
+
             if (h < 0)
                 toBorderFlag = true;
             else circle.setH(h);

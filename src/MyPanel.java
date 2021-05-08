@@ -6,8 +6,8 @@ public class MyPanel extends JPanel implements ActionListener
 {
     /***********Параметры Panel***********/
     Timer timer;
-    int PANEL_WIDTH = 1440;
-    int PANEL_HEIGHT = 810;
+    int PANEL_WIDTH = 1280;
+    int PANEL_HEIGHT = 1024;
 
     /**********Объект круг**************/
     Circle figure;
@@ -49,8 +49,8 @@ public class MyPanel extends JPanel implements ActionListener
                 {
                     instructionsHandler.setInstruction(0);
                 }
-                if (instructionsHandler.getIstruction() > 0)
-                    figure.printParams();
+                //if (instructionsHandler.getIstruction() > 0)
+                // figure.printParams();
             }
         }
         figure.tick();

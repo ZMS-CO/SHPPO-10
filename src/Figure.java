@@ -34,7 +34,7 @@ public class Figure {
     public void initFigure(double _x, double _y, double _r)
     {
         initCoord(_x, _y, _r);
-        printParams();
+        //printParams();
     }
 
     /*************Проверка на движение*******/
@@ -137,7 +137,9 @@ public class Figure {
 
     public void towardsBorder(int width, int height, int direction)
     {
-        System.out.print("dir=" + direction + " targetDim=" + targetDimension);
+
+        //System.out.print("dir=" + direction + " targetDim=" + targetDimension);
+
         switch (direction)
         {
             case -1:
@@ -161,7 +163,8 @@ public class Figure {
                 break;
             }
         }
-        System.out.print("h(circle)=" + h + "\n");
+
+        //System.out.print("h(circle)=" + h + "\n");
 
     }
 }

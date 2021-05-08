@@ -99,11 +99,11 @@ public class Main
                 }
 
                 SubInstructions.add(new InstructionPart(alphaGrad, h, dh, r, dr));
-                SubInstructions.get(j).printParameters();
+                //SubInstructions.get(j).printParameters();
             }
             Instruction instr = new Instruction(SubInstructions);
             frame.panel.instructionsHandler.addInstruction(instr);
-            frame.panel.instructionsHandler.printInstructions();
+            //frame.panel.instructionsHandler.printInstructions();
             if (i >= 8)
             {
                 break;
